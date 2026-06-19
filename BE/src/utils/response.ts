@@ -1,0 +1,58 @@
+import { Response } from 'express';
+
+interface ApiResponse<T = any> {
+  success: boolean;
+  data?: T;
+  message?: string;
+  error?: string;
+  meta?: {
+    page: number;
+    limit: number;
+    total: number;
+    totalPages: number;
+  };
+}
+
+export function sendSuccess<T>(res: Response, data: T, message?: string, statusCode = 200) {
+  const response: ApiResponse<T> = {
+    success: true,
+    data,
+    message,
+  };
+  return res.status(statusCode).json(response);
+}
+
+export function sendCreated<T>(res: Response, data: T, message = 'Created successfully') {
+  return sendSuccess(res, data, message, 201);
+}
+
+export function sendPaginated<T>(
+  res: Response,
+  data: T[],
+  total: number,
+  page: number,
+  limit: number,
+  message?: string
+) {
+  const response: ApiResponse<T[]> = {
+    success: true,
+    data,
+    message,
+    meta: {
+      page,
+      limit,
+      total,
+      totalPages: Math.ceil(total / limit),
+    },
+  };
+  return res.status(200).json(response);
+}
+
+export function sendError(res: Response, message: string, statusCode = 400, error?: string) {
+  const response: ApiResponse = {
+    success: false,
+    message,
+    error,
+  };
+  return res.status(statusCode).json(response);
+}

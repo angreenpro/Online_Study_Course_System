@@ -1,0 +1,65 @@
+ Trình bày bài toán thực tiễn
+1-1 Bối cảnh và mục tiêu bài toán
+Trong bối cảnh chuyển đổi số mạnh mẽ hiện nay, nhu cầu học tập trực tuyến ngày càng gia tăng. Các nền
+tảng học trực tuyến như Udemy, Coursera, edX yêu cầu một hệ thống quản lý dữ liệu hiệu quả nhằm hỗ trợ
+hoạt động giảng dạy, học tập và quản trị.
+Bài toán đặt ra là xây dựng cơ sở dữ liệu cho một hệ thống quản lý khóa học trực tuyến, đảm bảo khả
+năng lưu trữ, xử lý và khai thác dữ liệu phục vụ các nghiệp vụ thực tế của nền tảng e-learning.
+1-2 Các đối tượng tham gia hệ thống
+Hệ thống gồm các đối tượng chính sau:
+• Người dùng (Users): bao gồm học viên và giảng viên.
+• Giảng viên (Instructors): tạo và quản lý khóa học.
+• Khóa học (Courses): nội dung đào tạo thuộc nhiều lĩnh vực công nghệ.
+• Học viên: đăng ký khóa học, học tập và đánh giá.
+1-3 Yêu cầu về dữ liệu
+1. Quản lý người dùng
+Hệ thống cần lưu trữ thông tin người dùng bao gồm họ tên, email, mật khẩu và vai trò. Email phải
+là duy nhất để đảm bảo xác định chính xác mỗi người dùng. Một người dùng có thể đồng thời là học
+viên hoặc giảng viên.
+2. Quản lý giảng viên
+Mỗi giảng viên là một người dùng có chuyên môn cụ thể. Giảng viên có thể tạo và quản lý nhiều khóa
+học khác nhau.
+3. Quản lý khóa học
+Mỗi khóa học thuộc về một giảng viên và có các thông tin cơ bản như:
+• Tên khóa học
+• Mô tả
+• Giá tiền
+• Trình độ (Beginner, Intermediate, Advanced)
+Khóa học được tổ chức theo cấu trúc phân cấp gồm nhiều section, mỗi section chứa nhiều bài học.
+4. Quản lý nội dung bài học
+Mỗi bài học thuộc duy nhất một section và một khóa học. Thông tin bài học bao gồm:
+• Tên bài học
+• Thứ tự hiển thị
+• Thời lượng
+• Loại bài học (video, reading, quiz)
+5. Quản lý đăng ký và thanh toán
+Học viên có thể đăng ký nhiều khóa học. Hệ thống cần lưu thông tin đăng ký bao gồm:
+• Ngày đăng ký
+• Giá gốc
+• Giá sau giảm
+• Mã giảm giá (nếu có)
+16. Quản lý tiến độ học tập
+Hệ thống theo dõi tiến độ học tập của học viên theo từng bài học. Mỗi bản ghi tiến độ thể hiện trạng
+thái học tập (chưa học, đang học, hoàn thành) và thời điểm cập nhật cuối cùng.
+7. Quản lý đánh giá và kiểm tra
+Học viên có thể đánh giá khóa học thông qua điểm số và nhận xét. Ngoài ra, hệ thống ghi nhận kết
+quả làm bài kiểm tra (quiz), bao gồm điểm số và trạng thái đạt hoặc không đạt.
+1-4 Các chức năng nghiệp vụ chính
+Hệ thống cần hỗ trợ các chức năng nghiệp vụ sau:
+• Quản lý người dùng và phân quyền.
+• Quản lý khóa học và nội dung giảng dạy.
+• Đăng ký khóa học và xử lý thanh toán.
+• Theo dõi tiến độ học tập của học viên.
+• Đánh giá chất lượng khóa học và kết quả học tập.
+• Thống kê và phân tích doanh thu, mức độ tham gia học tập.
+1-5 Các quy trình nghiệp vụ
+1. Quy trình đăng ký và học khóa học
+Người dùng đăng ký tài khoản và đăng nhập hệ thống, lựa chọn khóa học mong muốn, thực hiện đăng
+ký và thanh toán. Sau khi đăng ký thành công, học viên bắt đầu học tập và hệ thống ghi nhận tiến
+độ theo từng bài học.
+2. Quy trình tạo và quản lý khóa học
+Giảng viên đăng nhập hệ thống, tạo khóa học mới, xây dựng cấu trúc gồm các section và bài học. Sau
+khi hoàn tất nội dung, khóa học được công bố để học viên đăng ký.
+3. Quy trình đánh giá và kiểm tra
+Trong quá trình học, học viên thực hiện các bài kiểm tra. Hệ thống chấm điểm, lưu kết quả và cho
+phép học viên đánh giá khóa học sau khi hoàn thành.
