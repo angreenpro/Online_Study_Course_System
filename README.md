@@ -1,8 +1,8 @@
-# 🎓 Online Study System
+# MI3120 - Phân tích thiết kế hệ thống - Hệ thống quản lý khóa học trực tuyến
 
 Một hệ thống nền tảng học trực tuyến (E-Learning) toàn diện, bao gồm cả hệ thống Backend (RESTful API) và Frontend (Web Application). Nền tảng hỗ trợ nhiều vai trò người dùng khác nhau như Học viên (Student), Giảng viên (Instructor) và Quản trị viên (Admin) với đầy đủ các tính năng từ quản lý khóa học, thanh toán, tiến độ học tập đến cấp phát chứng chỉ.
 
-## 🚀 Công nghệ sử dụng (Tech Stack)
+## Công nghệ sử dụng (Tech Stack)
 
 ### Backend (`/BE`)
 - **Node.js & Express.js:** Framework xây dựng RESTful API.
@@ -23,7 +23,7 @@ Một hệ thống nền tảng học trực tuyến (E-Learning) toàn diện, 
 
 ---
 
-## 🌟 Tính năng nổi bật
+## Tính năng nổi bật
 
 ### Phân quyền người dùng (RBAC)
 - **Học viên (Student):** Tìm kiếm khóa học, mua/đăng ký, học video, làm bài quiz trắc nghiệm, trao đổi thảo luận, nhận chứng chỉ.
@@ -88,7 +88,7 @@ npm run dev
 
 ---
 
-## 📂 Cấu trúc thư mục (Project Structure)
+## Cấu trúc thư mục (Project Structure)
 
 ### Backend (`/BE/src/`)
 ```text
@@ -120,7 +120,7 @@ src/
 
 ---
 
-## 🔒 Bảo mật (Security Guidelines)
+## Bảo mật (Security Guidelines)
 
 - **JWT Auth:** Token không bao giờ được thiết lập fallback mặc định ở môi trường production.
 - **Bảo mật Header & Rate Limit:** Hệ thống tích hợp sẵn `Helmet` và `Express-Rate-Limit` chống DDOS và Brute Force (đặc biệt ở các route `/api/auth`).
